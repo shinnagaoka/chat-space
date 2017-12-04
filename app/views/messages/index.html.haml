@@ -1,0 +1,43 @@
+.wrapper
+
+	= render 'shared/side_bar'
+
+	-#chat
+	.chat
+		-#header
+		.header
+			.header__left
+				.header__left__title
+					GUSTA
+				%ul.header__left__members
+					Member :
+					%li.member
+						taro
+					%li.member
+						ziro
+					%li.member
+						saburo
+			.header__right
+				.header__right__botton
+					Edit
+		.messages
+			.message
+				.top-message
+					.top-message__user-name
+						shun
+					.top-mesaage__date
+						2016/10/02 09:08:22
+				.under-message
+					.under-message__content
+						最高！！
+
+		.form
+			%form{action: "/", method: :post}
+				%input.form__message{name: :title, placeholder: "type a message"}
+				.form__mask
+					%label.form__mask__image
+						= fa_icon 'picture-o', class: 'icon'
+						%input.hidden{type: 'file'}
+				%input.form__submit{value: "Send", type: :submit}
+
+/ footer
