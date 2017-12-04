@@ -1,0 +1,42 @@
+.side-bar{
+	float: left;
+	width: 300px;
+	color: $white;
+	.header{
+		height: 100px;
+		background-color: #253141;
+		padding: 0 20px;
+		line-height: 100px;
+		&__name{
+			font-size: $font16;
+			font-weight: Bold;
+			float: left;
+		}
+		&__lists{
+			float: right;
+			display: flex;
+			list-style: none;
+			padding-left: none;
+			.list{
+				.fa{
+					color: white;
+				}
+			}
+		}
+	}
+	.groups{
+		padding: 0 20px;
+		height: calc(100vh - 100px);
+		background-color: $black;
+		.group{
+			padding: 20px 0px 40px;
+			&__name{
+				font-size: 15px;
+			}
+			&__message{
+				font-size: 11px;
+				margin-top: 5px;
+			}
+		}
+	}
+}
