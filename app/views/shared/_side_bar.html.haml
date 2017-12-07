@@ -2,13 +2,13 @@
 	-# header
 	.header
 		%h3.header__name
-			shin
+			= current_user.name
 		%ul.header__lists
 			%li.list
 				=link_to do
 					%i.fa.fa-pencil-square-o
 			%li.list
-				=link_to do
+				= link_to edit_user_path do
 					%i.fa.fa-cog
 	.groups
 		.group

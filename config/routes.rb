@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+	devise_for :users
 	root 'messages#index'
-  get 'messages/index' => 'messages#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	get 'messages/index' => 'messages#index'
+	get 'users/:id/edit' => 'users#edit'
+	resource :user, only: [:edit, :update]
+	resource :group, only: [:new, :create, :edit, :update]
 end
