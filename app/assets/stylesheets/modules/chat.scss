@@ -4,7 +4,7 @@
 	 	box-sizing: border-box;
 	 	height: 100px;
 	 	padding: 0 40px;
-	 		.header__left{
+	 		&__left{
 	 			float: left;
 	 			&__title{
 		 			font-size: 20px;
@@ -21,7 +21,7 @@
 	 				}
 	 			}
 	 		}
-	 		.header__right{
+	 		&__right{
 	 			float: right;
 	 			margin-top: 28px;
 	 			padding: 0 20px;
