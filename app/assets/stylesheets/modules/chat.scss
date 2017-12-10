@@ -26,10 +26,11 @@
 	 			margin-top: 28px;
 	 			padding: 0 20px;
 				border: 1px solid $blue;
-				color: $blue;
 				line-height: 40px;
-				height: 40px;
-				text-decoration: none;
+				&__botton{
+					color: #38AEF0;
+					text-decoration: none;
+				}
 				}
 	 		}
 	 }
@@ -74,6 +75,7 @@
 			float: left;
 			border: none;
 			width: calc(100% - 150px);
+			padding-left: 10px;
 		}
 		&__mask{
 			float: left;
