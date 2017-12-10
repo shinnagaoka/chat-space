@@ -18,8 +18,7 @@
 					%li.member
 						saburo
 			.header__right
-				.header__right__botton
-					Edit
+				=link_to "Edit" , edit_group_path(current_user.groups) , class: 'header__right__botton'
 		.messages
 			.message
 				.top-message
