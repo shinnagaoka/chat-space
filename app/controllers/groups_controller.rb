@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+
+	def index
+	end
+
 	def new
 		@group = Group.new
 		# 配列に要素を追加する動き
@@ -8,6 +12,7 @@ class GroupsController < ApplicationController
 	def create
 		@group = Group.new(group_params)
 		if @group.save
+			Member.create(user_id: current_user.id, group_id: @group.id)
 			redirect_to root_path, notice: "グループを作成しました"
 		else
 			render :new

@@ -19,7 +19,7 @@
 			.list{
 				padding-left: 5px;
 				.fa{
-					color: white;
+					color: $white;
 				}
 			}
 		}
@@ -27,15 +27,17 @@
 	.groups{
 		padding: 0 20px;
 		height: calc(100vh - 100px);
-		background-color: $black;
+		background-color: #2f3e51;
 		.group{
 			padding: 20px 0px ;
 			&__name{
 				font-size: 15px;
+				color: $white;
 			}
 			&__message{
 				font-size: 11px;
 				margin-top: 5px;
+				color: $white;
 			}
 		}
 	}

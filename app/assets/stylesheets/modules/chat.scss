@@ -37,10 +37,10 @@
 
 	 .messages{
 	 	background-color: #EEEEEE;
-	 	height: 762px;
 	 	padding: 46px 40px 0;
-	 	height: calc(100% - 100px - 90px);
+	 	height: calc(100vh - 100px - 90px);
 	 	box-sizing: border-box;
+	 	overflow: scroll;
 	 		.message{
 	 			.top-message{
 	 				display: flex;
