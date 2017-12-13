@@ -8,7 +8,7 @@
 		.header
 			.header__left
 				.header__left__title
-					GUSTA
+					= @group.name
 				%ul.header__left__members
 					Member :
 					%li.member
@@ -18,25 +18,16 @@
 					%li.member
 						saburo
 			.header__right
-				=link_to "Edit" , edit_group_path(current_user.groups) , class: 'header__right__botton'
-		.messages
-			.message
-				.top-message
-					.top-message__user-name
-						shun
-					.top-mesaage__date
-						2016/10/02 09:08:22
-				.under-message
-					.under-message__content
-						最高！！
+				=link_to "Edit" , edit_group_path(@group) , class: 'header__right__botton'
+
+		= render 'message', messages: @messages
 
 		.form
-			%form{action: "/", method: :post}
-				%input.form__message{name: :title, placeholder: "type a message"}
+			= form_for [@group, @message] do |f|
+				= f.text_field :content, class: "form__message" ,placeholder: "type a message"
 				.form__mask
 					%label.form__mask__image
-						= fa_icon 'picture-o', class: 'icon'
-						%input.hidden{type: 'file'}
-				%input.form__submit{value: "Send", type: :submit}
-
-/ footer
+						%i.fa.fa-picture-o
+						= f.file_field :image, class: "hidden"
+						= f.hidden_field :image_cache
+				= f.submit class: "form__submit", value:  "Send"

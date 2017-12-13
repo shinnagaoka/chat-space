@@ -1,0 +1,13 @@
+.messages
+	- messages.each do |message|
+		.message
+			.top-message
+				.top-message__user-name
+					= message.user.name
+				.top-message__date
+					= message.created_at
+			.under-message
+				.under-message__content
+					%p
+						= message.content
+						= image_tag message.image unless message.image.blank?
