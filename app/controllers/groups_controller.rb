@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
 		@group = Group.new(group_params)
 		if @group.save
 			Member.create(user_id: current_user.id, group_id: @group.id)
-			redirect_to root_path, notice: "グループを作成しました"
+			redirect_to root_path, notice: 'グループを作成しました'
 		else
 			render :new
 		end
@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
 	def update
 		group = Group.find(params[:id])
 		group.update(group_params)
-		redirect_to root_path, notice: "グループを変更しました。"
+		redirect_to root_path, notice: 'グループを変更しました'
 	end
 
 	private

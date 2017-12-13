@@ -19,20 +19,8 @@
 						saburo
 			.header__right
 				=link_to "Edit" , edit_group_path(@group) , class: 'header__right__botton'
-		.messages
-			- @messages.each do |message|
-				.message
-					.top-message
-						.top-message__user-name
-							= message.user.name
-						.top-message__date
-							= message.created_at
-					.under-message
-						.under-message__content
-							%p
-								= message.content
-							- if message.image != ""
-								= image_tag message.image
+
+		= render 'message', messages: @messages
 
 		.form
 			= form_for [@group, @message] do |f|
