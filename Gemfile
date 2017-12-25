@@ -31,8 +31,10 @@ gem 'pry'
 group :development, :test do
   gem 'byebug', platform: :mri
   #rspec
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
+	gem 'rspec-rails', '~>3.5'
+	gem 'factory_bot_rails', "~> 4.0"
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -42,6 +44,3 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do
-	gem 'faker'
-end
