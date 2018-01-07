@@ -11,23 +11,20 @@
 					= @group.name
 				%ul.header__left__members
 					Member :
-					%li.member
-						taro
-					%li.member
-						ziro
-					%li.member
-						saburo
+					- @group.users.each do |user|
+						%li.member
+							= user.name
 			.header__right
 				=link_to "Edit" , edit_group_path(@group) , class: 'header__right__botton'
 
 		= render 'message', messages: @messages
 
 		.form
-			= form_for [@group, @message] do |f|
+			= form_for [@group, @message], html: {id: 'js-form'} do |f|
 				= f.text_field :content, class: "form__message" ,placeholder: "type a message"
 				.form__mask
 					%label.form__mask__image
 						%i.fa.fa-picture-o
-						= f.file_field :image, class: "hidden"
+						= f.file_field :image, class: "hidden", id: 'js-image'
 						= f.hidden_field :image_cache
-				= f.submit class: "form__submit", value:  "Send"
+				= f.submit 'Send', class: "form__submit"
