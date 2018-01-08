@@ -1,6 +1,6 @@
 .messages
 	- messages.each do |message|
-		.message
+		.message{data: {id: message.id}}
 			.top-message
 				.top-message__user-name
 					= message.user.name
@@ -11,3 +11,4 @@
 					%p
 						= message.content
 						= image_tag message.image unless message.image.blank?
+
