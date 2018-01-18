@@ -86,9 +86,9 @@ $(function(){
 					$('.messages').append(html);
 				});
 			})
-			.fail(function(){
-				alert('error');
-			})
+			// .fail(function(){
+			// 	alert('erorrrrrrrr');
+			// })
 		}
 
 		if(document.URL.match("/messages")) {
